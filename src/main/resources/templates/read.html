@@ -5,10 +5,37 @@
 		<title>Jokes MVC CRUD App</title>
 	</head>
 	<body>
+		<table style="width:100%" border=1 >
+		  <tr>
+		    <th>Joke</th>
+		    <th>Punchline</th> 
+		    <th>Score</th>
+		    <th>Update</th>
+		    <th>Delete</th>
+		  </tr>
+		  {{#jokes}}
+		  <tr>
+		  
+		  	<td>{{joke}}</td>
+		  	<td>{{punchline}}</td>
+		  	<td>{{rating}}</td>
+		  	<td>
+		  		<form method="post" action="/update_joke">
+		  			<input type="submit" name="update" value="Update" id = update>
+		  			<input type="hidden" id="jokeID" name="jokeID" value={{id}}>
+		  		</form>
+		  	</td>
+		  	<td>
+		  		<form method="post" action="/delete_joke">
+		  			<input type="submit" name="delete" value="Delete" id = delete>
+		  			<input type="hidden" id="jokeID" name="jokeID" value={{id}}>
+		  		</form>
+		  	</td>
+
+		  </tr>
+		  {{/jokes}} 
+		</table>
 		
-		{{#jokes}}
-			{{joke}} - {{punchline}} - {{rating}} <br/>
-		{{/jokes}}
-		
+		<a href="/new_joke">New Joke</a>
 	</body>
 </html>

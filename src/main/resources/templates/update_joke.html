@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Jokes MVC CRUD App</title>
+	</head>
+	<body>
+		<form method="post" action="/update">
+		  	Enter a joke: <input type="text" name="joke" required id = joke value={{joke}} > <br/>
+		  	Enter a punchline: <input type="text" name="punchline" required id=punchline value={{punchline}}><br/>
+		  	Enter a rating: <input type="number" name="rating" required id = rating value={{rating}}><br/>
+		  	<input type="hidden" name="id" id=id value={{id}}>
+		  	<input type="submit" name="save" value=Save id = save><br/>
+		</form>
+		
+		<a href="/">Back</a>
+	</body>
+</html>
